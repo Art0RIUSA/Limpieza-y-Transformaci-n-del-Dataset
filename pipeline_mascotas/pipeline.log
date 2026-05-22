@@ -1,0 +1,65 @@
+2026-05-22 16:51:22 | INFO | INICIO PIPELINE
+2026-05-22 16:51:22 | INFO | Leyendo archivo: data/raw/mascotas.csv
+2026-05-22 16:51:22 | INFO | Duplicados
+2026-05-22 16:51:22 | INFO |   Filas duplicadas : 0
+2026-05-22 16:51:22 | INFO |   id_mascota duplicados          : 0
+2026-05-22 16:51:22 | INFO | Valores nulos por columna:
+2026-05-22 16:51:22 | INFO |   nombre              : 2 nulos
+2026-05-22 16:51:22 | INFO |   especie             : 2 nulos
+2026-05-22 16:51:22 | INFO |   raza                : 1 nulos
+2026-05-22 16:51:22 | INFO |   edad_años           : 10 nulos
+2026-05-22 16:51:22 | INFO |   peso_kg             : 1 nulos
+2026-05-22 16:51:22 | INFO |   fecha_consulta      : 1 nulos
+2026-05-22 16:51:22 | INFO |   dueño_nombre        : 2 nulos
+2026-05-22 16:51:22 | INFO |   dueño_email         : 1 nulos
+2026-05-22 16:51:22 | INFO |   motivo_consulta     : 1 nulos
+2026-05-22 16:51:22 | INFO |   costo_consulta      : 1 nulos
+2026-05-22 16:51:22 | INFO | outliers ne la columna  peso_kg:
+2026-05-22 16:51:22 | INFO |   Valores imposibles (peso>500 o edad<0) : 2
+2026-05-22 16:51:22 | INFO | Fechas malformadas en fecha_consulta:
+2026-05-22 16:51:22 | INFO |   Fechas no ISO encontradas: 16
+2026-05-22 16:51:22 | INFO |     id=3 | fecha='15/04/2023'
+2026-05-22 16:51:22 | INFO |     id=5 | fecha='20230601'
+2026-05-22 16:51:22 | INFO |     id=9 | fecha='22/08/2023'
+2026-05-22 16:51:22 | INFO |     id=12 | fecha='20230930'
+2026-05-22 16:51:22 | INFO |     id=16 | fecha='08/11/2023'
+2026-05-22 16:51:22 | INFO |     id=19 | fecha='20231205'
+2026-05-22 16:51:22 | INFO |     id=23 | fecha='08/01/2024'
+2026-05-22 16:51:22 | INFO |     id=25 | fecha='20240205'
+2026-05-22 16:51:22 | INFO |     id=28 | fecha='28/02/2024'
+2026-05-22 16:51:22 | INFO |     id=31 | fecha='20240401'
+2026-05-22 16:51:22 | INFO |     id=34 | fecha='15/04/2024'
+2026-05-22 16:51:22 | INFO |     id=37 | fecha='20240518'
+2026-05-22 16:51:22 | INFO |     id=40 | fecha='30/05/2024'
+2026-05-22 16:51:22 | INFO |     id=43 | fecha='20240620'
+2026-05-22 16:51:22 | INFO |     id=47 | fecha='10/07/2024'
+2026-05-22 16:51:22 | INFO |     id=50 | fecha='20240808'
+2026-05-22 16:51:22 | INFO | Eliminando duplicado
+2026-05-22 16:51:22 | INFO |   Filas antes  : 50
+2026-05-22 16:51:22 | INFO |   Filas después: 50
+2026-05-22 16:51:22 | INFO |   Eliminadas   : 0
+2026-05-22 16:51:22 | INFO | Eliminando filas completamente vacías
+2026-05-22 16:51:22 | INFO |   Eliminadas: 1
+2026-05-22 16:51:22 | INFO | corregir fechas malformadas
+2026-05-22 16:51:22 | INFO |   Fechas no parseables (NaT): 0
+2026-05-22 16:51:22 | INFO | Corrigiendo edades negativas
+2026-05-22 16:51:22 | INFO |   Edades negativas corregidas vía mediana: 1
+2026-05-22 16:51:22 | INFO | extrayendo mes y año de fecha_consulta
+2026-05-22 16:51:22 | INFO |   Rango de fechas: 2023-03-15 00:00:00 → 2024-08-08 00:00:00
+2026-05-22 16:51:22 | INFO | Calculando años_cliente
+2026-05-22 16:51:22 | INFO |   Fecha de referencia usada: 2024-08-08
+2026-05-22 16:51:22 | INFO | Codificando especie
+2026-05-22 16:51:22 | INFO |   Columnas  creadas: ['especie_Cat', 'especie_GATA', 'especie_GATO', 'especie_Loro', 'especie_PERRA', 'especie_PERRO', 'especie_Perro', 'especie_cat', 'especie_gata', 'especie_gato', 'especie_perra', 'especie_perro', 'especie_pez']
+2026-05-22 16:51:22 | INFO | ───────────────────────────────────────────────────────
+2026-05-22 16:51:22 | INFO | Dataset limpio guardado en: data/processed/mascotas_clean.csv
+2026-05-22 16:51:22 | INFO |   Shape final: (49, 27)
+2026-05-22 16:51:22 | INFO |   Columnas   : ['id_mascota', 'nombre', 'especie', 'raza', 'edad_años', 'peso_kg', 'fecha_consulta', 'dueño_nombre', 'dueño_email', 'motivo_consulta', 'costo_consulta', 'mes_consulta', 'año_consulta', 'años_cliente', 'especie_Cat', 'especie_GATA', 'especie_GATO', 'especie_Loro', 'especie_PERRA', 'especie_PERRO', 'especie_Perro', 'especie_cat', 'especie_gata', 'especie_gato', 'especie_perra', 'especie_perro', 'especie_pez']
+2026-05-22 16:51:22 | INFO | *******************************************************
+2026-05-22 16:51:22 | INFO | REPORTE FINAL – RESUMEN COMPARATIVO
+2026-05-22 16:51:22 | INFO |   Filas originales  : 50
+2026-05-22 16:51:22 | INFO |   Filas finales     : 49
+2026-05-22 16:51:22 | INFO |   Columnas originales: 11
+2026-05-22 16:51:22 | INFO |   Columnas finales   : 27
+2026-05-22 16:51:22 | INFO |   Nulos restantes    : 5
+2026-05-22 16:51:22 | INFO | FIN PIPELINE
+2026-05-22 16:51:22 | INFO | *******************************************************
